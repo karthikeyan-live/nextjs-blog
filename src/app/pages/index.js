@@ -1,4 +1,4 @@
-import Nav from '../components/nav';
+import Nav from '../components/Nav';
 import fetch from 'isomorphic-unfetch';
 import Button from '@material-ui/core/Button';
 
