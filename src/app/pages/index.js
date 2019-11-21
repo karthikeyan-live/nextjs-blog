@@ -1,6 +1,5 @@
-import Nav from '../components/Nav/index';
+import Nav from '../components/nav';
 import fetch from 'isomorphic-unfetch';
-import Button from '@material-ui/core/Button';
 
 export function getPosts() {
   return fetch(`https://jsonplaceholder.typicode.com/posts`)
