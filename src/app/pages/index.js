@@ -1,7 +1,23 @@
-import Nav from '../components/nav'
+import Nav from '../components/nav';
+import fetch from 'isomorphic-unfetch';
+import Button from '@material-ui/core/Button';
 
-export default () =>
+export function getPosts() {
+  return fetch(`https://jsonplaceholder.typicode.com/posts`)
+}
+
+const IndexPage = ({ posts }) =>
   <>
-    <p>This page is served by the index function. This is a test commit message.</p>
     <Nav />
+    {posts.map((post) => {
+      return <li key={post.id}>{post.title}</li>
+    })}
   </>
+
+
+IndexPage.getInitialProps = async ({ query }) => {
+  const res = await getPosts()
+  const json = await res.json()
+  return { posts: json }
+}
+export default IndexPage;

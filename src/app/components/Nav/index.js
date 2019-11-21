@@ -1,23 +1,33 @@
-import Link from 'next/link'
-import styled from 'styled-components'
+import AppBar from '@material-ui/core/AppBar';
+import { makeStyles } from '@material-ui/core/styles';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import React from 'react';
 
-const Wrapper = styled.nav`
-  padding: 15px;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  background: #387EF5;
-  a {
-    padding: 0 15px;
-    color: #FFF;
-  }
-`
+const useStyles = makeStyles(theme => ({
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  root: {
+    flexGrow: 1,
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
-const Nav = () => (
-  <Wrapper>
-    <Link href='/'><a>Home</a></Link> |
-    <Link href='/about' prefetch><a>About</a></Link> |
-    <Link href='/contact' prefetch><a>Contact</a></Link>
-  </Wrapper>
-)
+export default function Nav() {
+  const classes = useStyles();
 
-export default Nav
+  return (
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" className={classes.title}>
+            Karthikeyan Chandrasekar
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
+}

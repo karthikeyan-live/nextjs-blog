@@ -8,12 +8,14 @@ export function getPost (slug) {
 
 const PostPage = ({ post }) => (
   <Layout>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
+    <h1>hai</h1>
+      <h1>{post && post.title}</h1>
+      <p>{post && post.body}</p>
   </Layout>
 )
 
 PostPage.getInitialProps = async ({ query }) => {
+  console.log(query.slug);
   const res = await getPost(query.slug)
   const json = await res.json()
   return { post: json[0] }
