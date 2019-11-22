@@ -8,14 +8,14 @@ import Footer from '../components/Footer'
 export default ({ children, title = 'This is the default title' }) => (
   <Wrapper>
     <Head>
-      <title>{ title }</title>
+      <title>{title}</title>
     </Head>
     <header>
       <Nav />
     </header>
 
     <main>
-      { children }
+      {children}
     </main>
 
     <Footer>
