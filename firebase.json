@@ -8,6 +8,18 @@
     "public": "dist/public",
     "rewrites": [
       {
+        "source": "/firebase",
+        "function": "firebase"
+      },
+      {
+        "source": "/nextjs",
+        "function": "nextjs"
+      },
+      {
+        "source": "/serverless",
+        "function": "serverless"
+      },
+      {
         "source": "**/**",
         "function": "index"
       }
